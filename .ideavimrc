@@ -1,0 +1,57 @@
+set clipboard+=unnamed
+set clipboard+=ideaput
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+
+""" Plugin settings -------------------------
+
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set relativenumber
+set number
+set visualbell
+set showmode
+set so=5
+set insearch
+set nu
+set NERDTree
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Idea Commands for navigating the editor vimstyle
+map <A-h> <Action>(EditorLeft)
+map <A-j> <Action>(EditorDown)
+map <A-k> <Action>(EditorUp)
+map <A-l> <Action>(EditorRight)
+
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+
+""" Mappings --------------------------------
+map <leader>d <Action>(Debug)
+map <leader>r <Action>(RenameElement)
+map <leader>c <Action>(Stop)
+
+map <leader>s <Action>(SelectInProjectView)
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+
+map <S-Space> <Action>(GotoNextError)
+
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>o <Action>(FileStructurePopup)

@@ -114,5 +114,16 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 alias vi='nvim'
 alias vim='nvim'
+alias ls='exa -la'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias cat='bat'
+alias ls='exa -la'
+alias ps='procs'
+alias gs='git status'
 
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
