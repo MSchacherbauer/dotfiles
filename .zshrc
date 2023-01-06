@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,8 +109,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source <(kubectl completion zsh)
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 alias vi='nvim'
 alias vim='nvim'
@@ -120,10 +118,10 @@ alias cat='bat'
 alias ls='exa -la'
 alias ps='procs'
 alias gs='git status'
+alias ll='exa --long --header --group --git --modified --color-scale'
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+source <(kubectl completion zsh)
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

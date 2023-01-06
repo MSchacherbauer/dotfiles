@@ -10,9 +10,12 @@ set surround
 set multiple-cursors
 set commentary
 set argtextobj
+set ideamarks
 set easymotion
 set textobj-entire
 set ReplaceWithRegister
+set highlightedyank
+
 
 """ Plugin settings -------------------------
 
@@ -24,9 +27,11 @@ set number
 set visualbell
 set showmode
 set so=5
-set insearch
+set incsearch
 set nu
 set NERDTree
+set NERDTreeQuitOnOpen=1
+
 
 """ Idea specific settings ------------------
 set ideajoin
@@ -39,19 +44,34 @@ map <A-j> <Action>(EditorDown)
 map <A-k> <Action>(EditorUp)
 map <A-l> <Action>(EditorRight)
 
+nnoremap L $
+nnoremap H ^
+vnoremap L $
+vnoremap H ^
+
 map [[ <Action>(MethodUp)
 map ]] <Action>(MethodDown)
 
 """ Mappings --------------------------------
-map <leader>d <Action>(Debug)
+map <leader>D <Action>(DebugClass)
 map <leader>r <Action>(RenameElement)
 map <leader>c <Action>(Stop)
+map <leader>gg <Action>(Generate)
 
-map <leader>s <Action>(SelectInProjectView)
+map <leader>p <Action>(SelectInProjectView)
 map <leader>a <Action>(Annotate)
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>h <Action>(CallHierarchy)
+map <leader>/ <Action>(FindInPath)
+map <leader>u <Action>(FindUsage)
 
-map <S-Space> <Action>(GotoNextError)
+map <leader>e <Action>(GotoNextError)
+map <leader>i <Action>(GotoImplementation)
+map <leader>d <Action>(GotoDeclaration)
+map <leader>s <Action>(GotoSuperMethod)
+map <leader>t <Action>(GotoTest)
+map <leader>c <Action>(GotoClass)
 
 map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>o <Action>(FileStructurePopup)
+map <a-z> <Action>(HideAllWindows)
+map <c-z> <Action>(ToggleDistractionFreeMode)

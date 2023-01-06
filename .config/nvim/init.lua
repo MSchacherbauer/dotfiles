@@ -49,6 +49,10 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+  require('onedark').setup {
+    style='warmer',
+    term_colors=false,
+  }
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
@@ -95,6 +99,9 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
+-- Enable RelativeLineNumber
+vim.o.relativenumber = true
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -119,7 +126,7 @@ vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
-vim.o.termguicolors = true
+vim.o.termguicolors = false
 vim.cmd [[colorscheme onedark]]
 
 -- Set completeopt to have a better completion experience
@@ -349,7 +356,7 @@ local servers = {
       telemetry = { enable = false },
     },
   },
-  angularls = {}, 
+  angularls = {},
 }
 
 -- Setup neovim lua configuration
