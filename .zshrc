@@ -120,6 +120,13 @@ alias ps='procs'
 alias gs='git status'
 alias ll='exa --long --header --group --git --modified --color-scale'
 
+function color(){
+  print -Pn "%K{$1} \n";
+}
+
+function colorPal(){
+  for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+}
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 source <(kubectl completion zsh)
